@@ -31,7 +31,7 @@ function loadBook() {
   App.appendChild(nextPageLink)
   App.appendChild(nextSectionLink)
 
-  let book = ePub('../Discworld/');
+  let book = ePub('../books/Discworld/');
   let rendition = book.renderTo("viewer", {spread: "always", width: "100%", height: "100%" })
   rendition.display()
 
@@ -44,6 +44,10 @@ function loadBook() {
     rendition.prev();
     e.preventDefault();
   }, false);
+
+  nextPageLink.addEventListener("click", function(e) {
+
+  })
 
   rendition.on("rendered", function(section){
     let nextSection = section.next();
